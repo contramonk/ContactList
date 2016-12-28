@@ -1,23 +1,21 @@
 app.component('contactComponent', {
-  controller : function(contactService) {
+  controller : function(contactService, STATES_LIST) {
     var vm = this;
     vm.contacts = contactService.getContacts();
-    vm.removeContact = contactService.deleteContact;
+    vm.statesList = STATES_LIST.states;
     vm.newFirstName = "";
     vm.newLastName = "";
     vm.newEmail = "";
     vm.newPhone = "";
     vm.newStreet = "";
     vm.newCity = "";
-    vm.newState = "";
+    vm.newState = {};
     vm.newZip = "";
 
     vm.addContact = function(firstName, lastName, email, phone, street, city,
         state, zip) {
       var newContact = contactService.createContact(firstName, lastName, email,
         phone, street, city, state, zip);
-      // console.log(firstName, lastName, email, phone, street, city,
-      //     state, zip);
       vm.contacts.push(newContact);
       vm.newFirstName = "";
       vm.newLastName = "";
@@ -25,7 +23,7 @@ app.component('contactComponent', {
       vm.newPhone = "";
       vm.newStreet = "";
       vm.newCity = "";
-      vm.newState = "";
+      vm.newState = {};
       vm.newZip = "";
     };
 
@@ -42,7 +40,11 @@ app.component('contactComponent', {
         <input type="text" ng-model="$ctrl.newPhone" />
         <input type="text" ng-model="$ctrl.newStreet" />
         <input type="text" ng-model="$ctrl.newCity" />
-        <input type="text" ng-model="$ctrl.newState" />
+        <select ng-model="$ctrl.newState" />
+          <option ng-repeat="state in $ctrl.statesList" value="{{state.abbreviation}}">
+          {{state.abbreviation}}
+          </option>
+        </select>
         <input type="text" ng-model="$ctrl.newZip" />
       </div>
       <div class = "addButton">
