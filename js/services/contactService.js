@@ -16,7 +16,7 @@ app.factory('contactService', function() {
       }
     },
     {
-      id : 1,
+      id : 2,
       firstName : "Tim",
       lastName : "Murcury",
       email : "two@three.com",
@@ -29,7 +29,7 @@ app.factory('contactService', function() {
       }
     },
     {
-      id : 1,
+      id : 3,
       firstName : "Sandra",
       lastName : "Featherlink",
       email : "three@four.com",
@@ -46,6 +46,30 @@ app.factory('contactService', function() {
   service.getContacts = function() {
     return contacts;
   };
+
+  service.deleteContact = function(contact) {
+    var index = contacts.indexOf(contact);
+    contacts.splice(index, 1);
+  };
+
+  service.createContact = function(firstName, lastName, email, phone,
+      street, city, state, zip) {
+    var newContact =
+      {
+        id : contacts.length + 1,
+        firstName : firstName,
+        lastName : lastName,
+        email : email,
+        phone : phone,
+        address : {
+          street: street,
+          city: city,
+          zip: zip,
+          state: state
+        }
+      }
+      return newContact;
+  }
 
   return service;
 });
