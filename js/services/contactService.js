@@ -12,7 +12,7 @@ app.factory('contactService', function() {
         street: "1234 Buggars Dr",
         city: "Calderon",
         zip: "55968",
-        state: "Colorado"
+        state: "CO"
       }
     },
     {
@@ -25,7 +25,7 @@ app.factory('contactService', function() {
         street: "4231 Timid Ln",
         city: "Phoenix",
         zip: "87654",
-        state: "Wyoming"
+        state: "WY"
       }
     },
     {
@@ -38,7 +38,59 @@ app.factory('contactService', function() {
         street: "9090 Titan Rd",
         city: "Labsynth",
         zip: "89574",
-        state: "Florida"
+        state: "FL"
+      }
+    },
+    {
+      id : 4,
+      firstName : "Mr.",
+      lastName : "Pickles",
+      email : "six@six.com",
+      phone : "555-666-9879",
+      address : {
+        street: "6789 Beazelbub Rd.",
+        city: "South Pole",
+        zip: "97658",
+        state: "AZ"
+      }
+    },
+    {
+      id : 5,
+      firstName : "Turner",
+      lastName : "Ted",
+      email : "logger@tenminusone.com",
+      phone : "555-789-4567",
+      address : {
+        street: "4089 Little St",
+        city: "Fredericksburgen",
+        zip: "99945",
+        state: "HI"
+      }
+    },
+    {
+      id : 6,
+      firstName : "Elf",
+      lastName : "McFarlane",
+      email : "dontyoudare@crazy.com",
+      phone : "555-365-8906",
+      address : {
+        street: "1234 Angry Ln",
+        city: "Brittain",
+        zip: "28990",
+        state: "NC"
+      }
+    },
+    {
+      id : 7,
+      firstName : "Teresa",
+      lastName : "Lotta-tai-ping",
+      email : "exmogul@frenchRiviera.com",
+      phone : "555-347-3474",
+      address : {
+        street: "7657 Willthis Rd",
+        city: "Ever End",
+        zip: "70998",
+        state: "TX"
       }
     }
   ];
