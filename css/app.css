@@ -1,0 +1,88 @@
+h1 {
+  font-size: 40pt;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 30pt;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.header {
+  text-align: center;
+}
+
+input {
+  width: 70%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 15pt;
+}
+
+select {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 15pt;
+  color: grey;
+}
+label {
+  display: block;
+}
+
+.contactForm {
+  display: block;
+  text-align: center;
+}
+
+.container {
+
+}
+
+.addButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+}
+
+.body {
+  width: 100%
+}
+
+.column {
+  width: 33%;
+  float: left;
+
+}
+
+.contactHeader {
+  text-align: center;
+}
+
+.contactBody {
+  text-align: center;
+}
+.contactFooter {
+  text-align: center;
+}
+.column {
+  float: left;
+}
+
+.row {
+  display: block;
+}

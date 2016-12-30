@@ -5,20 +5,69 @@ app.component('contactList', {
   },
 
   template : `
-    <div class = 'contactContainer' ng-repeat="contact in $ctrl.data">
-      <div class = 'contactHeader'>
-        <h2>{{contact.firstName}} {{contact.lastName}}</h2>
+  <div class='contactContainer'>
+      <div ng-repeat="contact in $ctrl.data" ng-if="$index % 3 == 0" class="row">
+          <!-- column 1 -->
+          <div class="column">
+              <div class='contactHeader'>
+                  <h2>{{$ctrl.data[$index].firstName}} {{$ctrl.data[$index].lastName}}</h2>
+              </div>
+              <div class="contactBody">
+                  <ul>
+                      <li>{{$ctrl.data[$index].email}}</li>
+                      <li>{{$ctrl.data[$index].phone}}</li>
+                      <li>{{$ctrl.data[$index].address.street}}</li>
+                      <li>{{$ctrl.data[$index].address.city}}, {{$ctrl.data[$index].address.state}}, {{$ctrl.data[$index].address.zip}}</li>
+                  </ul>
+              </div>
+              <div class="contactFooter">
+                  <button ng-click="$ctrl.removeContact($ctrl.data[$index])">Delete</button>
+              </div>
+          </div>
+
+          <!-- column 2 -->
+          <!-- making sure index is not out of bounds -->
+          <div class="column" ng-if="$index + 1 < $ctrl.data.length">
+              <div class='contactHeader'>
+                  <h2>{{$ctrl.data[$index + 1].firstName}} {{$ctrl.data[$index + 1].lastName}}</h2>
+              </div>
+              <div class="contactBody">
+                  <ul>
+                      <li>{{$ctrl.data[$index + 1].email}}</li>
+                      <li>{{$ctrl.data[$index + 1].phone}}</li>
+                      <li>{{$ctrl.data[$index + 1].address.street}}</li>
+                      <li>{{$ctrl.data[$index + 1].address.city}}, {{$ctrl.data[$index + 1].address.state}}, {{$ctrl.data[$index + 1].address.zip}}</li>
+                  </ul>
+              </div>
+              <div class="contactFooter">
+                  <button ng-click="$ctrl.removeContact($ctrl.data[$index + 1])">Delete</button>
+              </div>
+          </div>
+
+          <!-- column 3 -->
+          <!-- making sure index is not out of bounds -->
+          <div class="column" ng-if="$index + 2 < $ctrl.data.length">
+              <div class='contactHeader'>
+                  <h2>{{$ctrl.data[$index + 2].firstName}} {{$ctrl.data[$index + 2].lastName}}</h2>
+              </div>
+              <!-- end contact header -->
+              <div class="contactBody">
+                  <ul>
+                      <li>{{$ctrl.data[$index + 2].email}}</li>
+                      <li>{{$ctrl.data[$index + 2].phone}}</li>
+                      <li>{{$ctrl.data[$index + 2].address.street}}</li>
+                      <li>{{$ctrl.data[$index + 2].address.city}}, {{$ctrl.data[$index + 2].address.state}}, {{$ctrl.data[$index + 2].address.zip}}</li>
+                  </ul>
+              </div>
+              <!-- end contactBody -->
+              <div class="contactFooter">
+                  <button ng-click="$ctrl.removeContact($ctrl.data[$index + 2])">Delete</button>
+              </div>
+          </div>
       </div>
-      <ul>
-        <li>{{contact.email}}</li>
-        <li>{{contact.phone}}</li>
-        <li>{{contact.address.street}}</li>
-        <li>{{contact.address.city}}</li>
-        <li>{{contact.address.state}}</li>
-        <li>{{contact.address.zip}}</li>
-      </ul>
-      <button ng-click = "$ctrl.removeContact(contact)">Delete</button>
-    </div>
+  </div>
+
+
   `,
 
   bindings : {
